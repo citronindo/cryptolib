@@ -6,7 +6,7 @@ using citronindo.crypto.proto;
 using citronindo.crypto.signal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ciwapi.test.binaries
+namespace citronlib.test
 {
 	[TestClass]
 	public class TestCrypto
