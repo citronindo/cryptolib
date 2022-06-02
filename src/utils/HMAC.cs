@@ -45,19 +45,17 @@ namespace citronindo.crypto
         /// </summary>
         /// <param name="message">plaintext</param>
         /// <returns>PKCS5 of the message</returns>
-        public static byte[] aesCbcPkcs5(byte[] message, byte[] key, byte[] iv)
+        public static byte[] AesCbcPkcs5(byte[] message, byte[] key, byte[] iv)
         {
-            using (var aes = Aes.Create())
-            {
-                aes.Padding = PaddingMode.PKCS7;
-                aes.BlockSize = 128;
-                aes.Key = key;
-                aes.IV = iv;
-                using (var encrypt = aes.CreateEncryptor())
-                {
-                    return encrypt.TransformFinalBlock(message, 0, message.Length);
-                }
-            }
+            using var aes = Aes.Create();
+            aes.Mode = CipherMode.CBC;
+            aes.Padding = PaddingMode.PKCS7;
+            aes.BlockSize = iv.Length * 8;
+            aes.KeySize = key.Length * 8;
+            aes.Key = key;
+            aes.IV = iv;
+            using var encrypt = aes.CreateEncryptor();
+            return encrypt.TransformFinalBlock(message, 0, message.Length);
         }
     }
 
@@ -68,18 +66,16 @@ namespace citronindo.crypto
     {
         public static byte[] aesCbcPkcs5(byte[] message, byte[] key, byte[] iv)
         {
-            using (var aes = Aes.Create())
-            {
-                aes.Padding = PaddingMode.PKCS7;
-                aes.BlockSize = 128;
-                aes.Key = key;
-                aes.IV = iv;
-                if (message.Length % (aes.BlockSize/8) != 0) throw new Exception("Invalid ciphertext length");
-                using (var decrypt = aes.CreateDecryptor())
-                {
-                    return decrypt.TransformFinalBlock(message, 0, message.Length);
-                }
-            }
+            using var aes = Aes.Create();
+            aes.Mode = CipherMode.CBC;
+            aes.Padding = PaddingMode.PKCS7;
+            aes.BlockSize = iv.Length * 8;
+            aes.KeySize = key.Length * 8;
+            aes.Key = key;
+            aes.IV = iv;
+            if (message.Length % (aes.BlockSize / 8) != 0) throw new Exception("Invalid ciphertext length");
+            using var decrypt = aes.CreateDecryptor();
+            return decrypt.TransformFinalBlock(message, 0, message.Length);
         }
     }
 

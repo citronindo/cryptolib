@@ -379,7 +379,7 @@ namespace citronindo.crypto.signal
 
         private byte[] getCiphertext(MessageKeys messageKeys, byte[] plaintext)
         {
-            return Encrypt.aesCbcPkcs5(plaintext, messageKeys.getCipherKey(), messageKeys.getIv());
+            return Encrypt.AesCbcPkcs5(plaintext, messageKeys.getCipherKey(), messageKeys.getIv());
         }
 
         private byte[] getPlaintext(MessageKeys messageKeys, byte[] cipherText)

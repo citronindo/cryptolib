@@ -200,7 +200,7 @@ namespace citronindo.crypto.signal
 
                 cipher.init(Cipher.ENCRYPT_MODE, new SecretKeySpec(key, "AES"), ivParameterSpec);*/
 
-                return Encrypt.aesCbcPkcs5(plaintext, key, iv);
+                return Encrypt.AesCbcPkcs5(plaintext, key, iv);
             }
             catch (Exception e)
             {
