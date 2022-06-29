@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 25.0.1703.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cryptolib", "src\cryptolib.csproj", "{210C0F6C-6E7E-423C-A53A-35B056C9DAC8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "citronlib.test", "test\citronlib.test.csproj", "{36F7131D-C103-4608-B01E-8FD44BD17988}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cryptolib.v2", "src\cryptolib.v2\cryptolib.v2.csproj", "{0925690B-97B8-401A-AE28-D7C2E288C469}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cryptolib.v1", "src\cryptolib.v1\cryptolib.v1.csproj", "{57A89952-8945-4D6A-B113-30569CBF5121}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,19 +15,25 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{210C0F6C-6E7E-423C-A53A-35B056C9DAC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{210C0F6C-6E7E-423C-A53A-35B056C9DAC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{210C0F6C-6E7E-423C-A53A-35B056C9DAC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{210C0F6C-6E7E-423C-A53A-35B056C9DAC8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{36F7131D-C103-4608-B01E-8FD44BD17988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{36F7131D-C103-4608-B01E-8FD44BD17988}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36F7131D-C103-4608-B01E-8FD44BD17988}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36F7131D-C103-4608-B01E-8FD44BD17988}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0925690B-97B8-401A-AE28-D7C2E288C469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0925690B-97B8-401A-AE28-D7C2E288C469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0925690B-97B8-401A-AE28-D7C2E288C469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0925690B-97B8-401A-AE28-D7C2E288C469}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57A89952-8945-4D6A-B113-30569CBF5121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57A89952-8945-4D6A-B113-30569CBF5121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57A89952-8945-4D6A-B113-30569CBF5121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57A89952-8945-4D6A-B113-30569CBF5121}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {232EDC8D-D5C4-4D7A-A0C3-629150BDC42E}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 EndGlobal
