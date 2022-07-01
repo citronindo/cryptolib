@@ -26,7 +26,7 @@ namespace citronindo.cryptolib.signal.groups
     /// <summary>
     /// The main entry point for Signal Protocol group encrypt/decrypt operations.
     /// 
-    /// Once a session has been established with <see cref="GroupSessionBuilder"/> and a <see cref="SenderKeyDistributionMessage"/>
+    /// Once a session has been established with <see cref="GroupSessionBuilder"/> and a <see cref="SignalSenderKeyDistributionMessage"/>
     /// has been distributed to each member of the group, this class can be used for all subsequent encrypt/decrypt
     /// operations within that session (ie: until group membership changes).
     /// </summary>

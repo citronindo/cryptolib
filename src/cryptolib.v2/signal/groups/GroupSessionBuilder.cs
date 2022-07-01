@@ -45,9 +45,9 @@ namespace citronindo.cryptolib.signal.groups
         /// <summary>
         /// Construct a group session for receiving messages from senderKeyName.
         /// </summary>
-        /// <param name="senderKeyName">The (groupId, senderId, deviceId) tuple associated with the SenderKeyDistributionMessage.</param>
-        /// <param name="senderKeyDistributionMessage">A received SenderKeyDistributionMessage.</param>
-        public void process(SenderKeyName senderKeyName, SenderKeyDistributionMessage senderKeyDistributionMessage)
+        /// <param name="senderKeyName">The (groupId, senderId, deviceId) tuple associated with the SignalSenderKeyDistributionMessage.</param>
+        /// <param name="SignalSenderKeyDistributionMessage">A received SignalSenderKeyDistributionMessage.</param>
+        public void process(SenderKeyName senderKeyName, SignalSenderKeyDistributionMessage senderKeyDistributionMessage)
         {
             lock (GroupCipher.LOCK)
             {
@@ -65,8 +65,8 @@ namespace citronindo.cryptolib.signal.groups
         /// </summary>
         /// <param name="senderKeyName">The (groupId, senderId, deviceId) tuple. In this case, 'senderId' should be the
         /// caller.</param>
-        /// <returns>A SenderKeyDistributionMessage that is individually distributed to each member of the group.</returns>
-        public SenderKeyDistributionMessage create(SenderKeyName senderKeyName)
+        /// <returns>A SignalSenderKeyDistributionMessage that is individually distributed to each member of the group.</returns>
+        public SignalSenderKeyDistributionMessage create(SenderKeyName senderKeyName)
         {
             lock (GroupCipher.LOCK)
             {
@@ -85,7 +85,7 @@ namespace citronindo.cryptolib.signal.groups
 
                     SenderKeyState state = senderKeyRecord.getSenderKeyState();
 
-                    return new SenderKeyDistributionMessage(state.getKeyId(),
+                    return new SignalSenderKeyDistributionMessage(state.getKeyId(),
                                                             state.getSenderChainKey().getIteration(),
                                                             state.getSenderChainKey().getSeed(),
                                                             state.getSigningKeyPublic());

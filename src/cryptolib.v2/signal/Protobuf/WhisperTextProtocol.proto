@@ -33,7 +33,7 @@ message SenderKeyMessage {
   oneof ciphertext_oneof		{ bytes  ciphertext = 3; }
 }
 
-message SenderKeyDistributionMessage {
+message SignalSenderKeyDistributionMessage {
   oneof id_oneof				{ uint32 id         = 1; }
   oneof iteration_oneof			{ uint32 iteration  = 2; }
   oneof chainKey_oneof			{ bytes  chainKey   = 3; }

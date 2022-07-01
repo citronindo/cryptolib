@@ -29,6 +29,12 @@ namespace citronindo.cryptolib.signal.util
                 return mac.ComputeHash(message);
             }
         }
+
+        public static byte[] sha256(byte[] message)
+        {
+            using HashAlgorithm sha = SHA256.Create();
+            return sha.ComputeHash(message);
+        }
     }
 
     /// <summary>

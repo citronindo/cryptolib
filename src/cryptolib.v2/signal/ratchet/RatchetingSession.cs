@@ -182,7 +182,7 @@ namespace citronindo.cryptolib.signal.ratchet
             private readonly RootKey rootKey;
             private readonly ChainKey chainKey;
 
-            internal DerivedKeys(RootKey rootKey, ChainKey chainKey)
+            public DerivedKeys(RootKey rootKey, ChainKey chainKey)
             {
                 this.rootKey = rootKey;
                 this.chainKey = chainKey;

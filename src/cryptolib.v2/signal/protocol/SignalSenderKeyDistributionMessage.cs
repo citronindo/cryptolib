@@ -22,7 +22,7 @@ using citronindo.cryptolib.signal.util;
 
 namespace citronindo.cryptolib.signal.protocol
 {
-    public partial class SenderKeyDistributionMessage : CiphertextMessage
+    public partial class SignalSenderKeyDistributionMessage : CiphertextMessage
     {
         private readonly uint id;
         private readonly uint iteration;
@@ -30,10 +30,10 @@ namespace citronindo.cryptolib.signal.protocol
         private readonly ECPublicKey signatureKey;
         private readonly byte[] serialized;
 
-        public SenderKeyDistributionMessage(uint id, uint iteration, byte[] chainKey, ECPublicKey signatureKey)
+        public SignalSenderKeyDistributionMessage(uint id, uint iteration, byte[] chainKey, ECPublicKey signatureKey)
         {
             byte[] version = { ByteUtil.intsToByteHighAndLow((int)CURRENT_VERSION, (int)CURRENT_VERSION) };
-            byte[] protobuf = new SenderKeyDistributionMessage
+            byte[] protobuf = new SignalSenderKeyDistributionMessage
             {
                 Id = id,
                 Iteration = iteration,
@@ -49,7 +49,7 @@ namespace citronindo.cryptolib.signal.protocol
             this.serialized = ByteUtil.combine(version, protobuf);
         }
 
-        public SenderKeyDistributionMessage(byte[] serialized)
+        public SignalSenderKeyDistributionMessage(byte[] serialized)
         {
             try
             {
@@ -67,7 +67,7 @@ namespace citronindo.cryptolib.signal.protocol
                     throw new InvalidMessageException("Unknown version: " + ByteUtil.highBitsToInt(version));
                 }
 
-                SenderKeyDistributionMessage distributionMessage = SenderKeyDistributionMessage.Parser.ParseFrom(message);
+                SignalSenderKeyDistributionMessage distributionMessage = SignalSenderKeyDistributionMessage.Parser.ParseFrom(message);
 
                 if (distributionMessage.IdOneofCase == IdOneofOneofCase.None ||
                     distributionMessage.IterationOneofCase == IterationOneofOneofCase.None ||
