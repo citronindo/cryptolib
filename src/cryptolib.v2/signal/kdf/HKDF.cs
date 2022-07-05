@@ -42,7 +42,7 @@ namespace citronindo.cryptolib.signal.kdf
             return deriveSecrets(inputKeyMaterial, salt, info, outputLength);
         }
 
-        public byte[] deriveSecrets(byte[] inputKeyMaterial, byte[] salt, byte[] info, int outputLength)
+        public byte[] deriveSecrets(byte[] inputKeyMaterial, byte[] salt, byte[]? info, int outputLength)
         {
             byte[] prk = extract(salt, inputKeyMaterial);
             return expand(prk, info, outputLength);
