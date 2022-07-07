@@ -47,12 +47,12 @@ namespace citronindo.cryptolib.signal
             return publicKey.serialize();
         }
 
-        public String getFingerprint()
+        public string getFingerprint()
         {
             return publicKey.serialize().ToString(); //Hex
         }
 
-        public override bool Equals(Object other)
+        public override bool Equals(object? other)
         {
             if (other == null) return false;
             if (!(other is IdentityKey)) return false;
