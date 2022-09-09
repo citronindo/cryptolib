@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace citronlib.test
+namespace cryptolib.test
 {
     [TestClass]
 	public class TestArray
@@ -16,6 +16,13 @@ namespace citronlib.test
 
             CollectionAssert.AreEqual(dest[5..(5+3)].ToArray(), source[..3]);
         }
-	}
+
+        [TestMethod]
+        public void TestRandom()
+        {
+            Random rnd = new();
+            var sc = string.Join("", DateTime.Now.ToString("yyMMdd"), rnd.Next(1000, 9999));
+        }
+    }
 }
 

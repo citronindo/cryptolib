@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace citronlib.test
+namespace cryptolib.test
 {
     [TestClass]
 	public class Bitwise

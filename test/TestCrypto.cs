@@ -11,7 +11,7 @@ using citronindo.cryptolib.signal.state.impl;
 using citronindo.cryptolib.signal.util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace citronlib.test
+namespace cryptolib.test
 {
 	[TestClass]
 	public class TestCrypto
@@ -124,7 +124,7 @@ namespace citronlib.test
         public void PreKeySignalMessageEncryptDecrypt()
         {
             uint registrationId = KeyHelper.generateRegistrationId(false);
-            uint devideId = 1;
+            uint deviceId = 1;
             uint preKeyId = 31337;
             uint signedPreKeyId = 22;
             var timestamp = (ulong)(DateTime.UtcNow - DateTime.UnixEpoch).TotalMilliseconds;
@@ -150,7 +150,7 @@ namespace citronlib.test
 
             PreKeyBundle bobPreKey = new(
                 bobStore.GetLocalRegistrationId(),
-                devideId,
+                deviceId,
                 preKeyId,
                 bobPreKeyPair.getPublicKey(),
                 signedPreKeyId,
