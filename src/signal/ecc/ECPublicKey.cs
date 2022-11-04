@@ -27,5 +27,7 @@ namespace citronindo.cryptolib.signal.ecc
         byte[] serialize();
 
         int getType();
+
+        byte[] getPublicKey();
     }
 }
