@@ -36,7 +36,7 @@ namespace citronindo.cryptolib.signal.kdf
             }
         }
 
-        public byte[] deriveSecrets(byte[] inputKeyMaterial, byte[] info, int outputLength)
+        public byte[] deriveSecrets(byte[] inputKeyMaterial, byte[]? info, int outputLength)
         {
             byte[] salt = new byte[HASH_OUTPUT_SIZE];
             return deriveSecrets(inputKeyMaterial, salt, info, outputLength);
