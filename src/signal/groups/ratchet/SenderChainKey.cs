@@ -16,6 +16,7 @@
  */
 
 using citronindo.cryptolib.signal.util;
+using citronindo.cryptolib.util;
 
 namespace citronindo.cryptolib.signal.groups.ratchet
 {

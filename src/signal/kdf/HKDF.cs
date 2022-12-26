@@ -16,6 +16,7 @@
  */
 
 using citronindo.cryptolib.signal.util;
+using citronindo.cryptolib.util;
 using System;
 using System.IO;
 

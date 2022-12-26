@@ -20,6 +20,7 @@ using citronindo.cryptolib.signal.groups.ratchet;
 using citronindo.cryptolib.signal.groups.state;
 using citronindo.cryptolib.signal.protocol;
 using citronindo.cryptolib.signal.util;
+using citronindo.cryptolib.util;
 
 namespace citronindo.cryptolib.signal.groups
 {
@@ -183,7 +184,7 @@ namespace citronindo.cryptolib.signal.groups
 
                 cipher.init(Cipher.DECRYPT_MODE, new SecretKeySpec(key, "AES"), ivParameterSpec);*/
 
-                return Decrypt.aesCbcPkcs5(ciphertext, key, iv);
+                return Decrypt.aesCbcPkcs7(ciphertext, key, iv);
             }
             catch (Exception e)
             {
@@ -200,7 +201,7 @@ namespace citronindo.cryptolib.signal.groups
 
                 cipher.init(Cipher.ENCRYPT_MODE, new SecretKeySpec(key, "AES"), ivParameterSpec);*/
 
-                return Encrypt.aesCbcPkcs5(plaintext, key, iv);
+                return Encrypt.aesCbcPkcs7(plaintext, key, iv);
             }
             catch (Exception e)
             {

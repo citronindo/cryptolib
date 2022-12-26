@@ -21,6 +21,7 @@ using System.Linq;
 using Google.Protobuf;
 using citronindo.cryptolib.signal.ecc;
 using citronindo.cryptolib.signal.util;
+using citronindo.cryptolib.util;
 
 namespace citronindo.cryptolib.signal.protocol
 {

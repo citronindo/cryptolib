@@ -7,6 +7,7 @@ using citronindo.cryptolib.signal.ratchet;
 using citronindo.cryptolib.signal.state;
 using citronindo.cryptolib.signal.util;
 using citronindo.cryptolib.may;
+using citronindo.cryptolib.util;
 
 namespace citronindo.cryptolib.signal
 {
@@ -380,12 +381,12 @@ namespace citronindo.cryptolib.signal
 
         private byte[] getCiphertext(MessageKeys messageKeys, byte[] plaintext)
         {
-            return Encrypt.aesCbcPkcs5(plaintext, messageKeys.getCipherKey(), messageKeys.getIv());
+            return Encrypt.aesCbcPkcs7(plaintext, messageKeys.getCipherKey(), messageKeys.getIv());
         }
 
         private byte[] getPlaintext(MessageKeys messageKeys, byte[] cipherText)
         {
-            return Decrypt.aesCbcPkcs5(cipherText, messageKeys.getCipherKey(), messageKeys.getIv());
+            return Decrypt.aesCbcPkcs7(cipherText, messageKeys.getCipherKey(), messageKeys.getIv());
         }
 
         private class NullDecryptionCallback : DecryptionCallback
