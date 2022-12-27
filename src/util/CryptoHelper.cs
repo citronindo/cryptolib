@@ -12,10 +12,10 @@ namespace citronindo.cryptolib.util
     public static class CryptoHelper
     {
         // generate random iv
-        public static byte[] GenerateIV()
+        public static byte[] GenerateIV(int length)
         {
             // generate iv
-            byte[] iv = new byte[12];
+            byte[] iv = new byte[length];
             Random rand = new();
             rand.NextBytes(iv);
             return iv;
@@ -99,9 +99,7 @@ namespace citronindo.cryptolib.util
 
         public static byte[] AesGcmSecret(byte[] message, byte[] secret)
         {
-            HKDF kdf = new HKDFv3();
-            byte[] derive = kdf.deriveSecrets(secret, secret, 80);
-            var iv = derive[^12..];
+            var iv = CryptoHelper.GenerateIV(12);
             return Encrypt.aesGcm(message, secret, iv); ;
         }
     }
@@ -127,7 +125,7 @@ namespace citronindo.cryptolib.util
             }
         }
 
-        public static byte[] aesGcm(byte[] message, byte[] key, byte[]? associatedData)
+        public static byte[] aesGcm(byte[] message, byte[] key, byte[]? associatedData = null)
         {
             var iv = message[0..12];
             var cipherBytes = message[12..];
